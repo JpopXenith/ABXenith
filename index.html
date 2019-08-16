@@ -276,13 +276,47 @@
 				<!-- Six -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
-							<h2>Ipsum sed consequat</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+							<h2>Antonio's Training</h2>
+							<p>Get into game mode with Antonio's recommended training Regiment.</p>
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
-									<span class="icon style2 major fa-gem"></span>
-									<h3>Lorem</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<!-- <span class="icon style2 major fa-gem"></span> -->
+									<h3>Box Drill</h3>
+									<div style="max-width:560px;margin:0 auto; padding:5px;">
+										<div style="position: relative;padding-bottom: 56.25%; height: 0; overflow: hidden;">
+											<iframe width="560" height="315" frameborder="0" allowfullscreen=""
+												src="https://www.youtube.com/embed/boeN7c5ghYc?showinfo=0"
+												style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; max-width: 560px; max-height: 315px;"></iframe>
+										</div>
+									</div>
+								
+									
+								</section>
+								<section>
+									<!-- <span class="icon style2 major fa-gem"></span> -->
+									<h3>Icky Shuffle</h3>
+									<div style="max-width:560px;margin:0 auto; padding:5px;">
+										<div style="position: relative;padding-bottom: 56.25%; height: 0; overflow: hidden;">
+											<iframe width="560" height="315" frameborder="0" allowfullscreen=""
+												src="https://www.youtube.com/embed/IEHnVteZ_GY?showinfo=0"
+												style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; max-width: 560px; max-height: 315px;"></iframe>
+										</div>
+									</div>
+								
+			
+								</section>
+								<section>
+									<!-- <span class="icon style2 major fa-gem"></span> -->
+									<h3>Side Straddle Hop</h3>
+									<div style="max-width:560px;margin:0 auto; padding:5px;">
+										<div style="position: relative;padding-bottom: 56.25%; height: 0; overflow: hidden;">
+											<iframe width="560" height="315" frameborder="0" allowfullscreen=""
+												src="https://www.youtube.com/embed/n90e7QQswr0?showinfo=0"
+												style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; max-width: 560px; max-height: 315px;"></iframe>
+										</div>
+									</div>
+								
+									
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-save"></span>
@@ -387,6 +421,31 @@
 			</div>
 
 		<!-- Scripts -->
+		<script>
+			$(document).ready(function() {
+  if(typeof YOUTUBE_VIDEO_MARGIN == 'undefined') {
+    YOUTUBE_VIDEO_MARGIN=5;
+  }
+  $('iframe').each(function(index,item) {
+    if($(item).attr('src').match(/(https?:)?\/\/www\.youtube\.com/)) {
+      var w=$(item).attr('width');
+      var h=$(item).attr('height');
+      var ar = h/w*100;
+      ar=ar.toFixed(2);
+      //Style iframe    
+      $(item).css('position','absolute');
+      $(item).css('top','0');
+      $(item).css('left','0');    
+      $(item).css('width','100%');
+      $(item).css('height','100%');
+      $(item).css('max-width',w+'px');
+      $(item).css('max-height', h+'px');        
+      $(item).wrap('<div style="max-width:'+w+'px;margin:0 auto; padding:'+YOUTUBE_VIDEO_MARGIN+'px;" />');
+      $(item).wrap('<div style="position: relative;padding-bottom: '+ar+'%; height: 0; overflow: hidden;" />');
+    }
+  });
+});
+		</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
